@@ -24,6 +24,13 @@
 
     body {
       background: #c5daee;
+      display:flex;
+      flex-direction:column;
+    }
+
+    html,
+    body {
+      height:100%;
     }
 
     </style>
@@ -155,81 +162,481 @@
 
 
 
-
-
-
-
-
-
-        <!-- ================================= -->
         <!-- STEP 2 : DOCUMENT UPLOAD -->
-        <!-- ================================= -->
+        <div class="form-step">
+            <h2>2. Document Submission</h2>
 
-        <!-- <div class="form-step">
+            <div class="form-grid">
 
-            <h2>
-                2. Document Submission – Original & Soft Copies
-            </h2>
+                <!-- 10TH -->
+                <div class="input-group">
+                    <label>10th Marksheet</label>
+                    <input type="file" name="tenth_marksheet" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <small>PDF / JPG / PNG (Max 2MB)</small>
+                </div>
+
+                <!-- 12TH -->
+                <div class="input-group">
+                    <label>12th Marksheet</label>
+                    <input type="file" name="twelfth_marksheet" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <small>PDF / JPG / PNG (Max 2MB)</small>
+                </div>
+
+                <!-- DEGREE CERTIFICATE -->
+                <div class="input-group">
+                    <label>Degree Completion Certificate</label>
+                    <input type="file" name="degree_certificate" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <small>PDF / JPG / PNG (Max 2MB)</small>
+                </div>
+
+                <!-- DEGREE MARKSHEET -->
+                <div class="input-group">
+                    <label>Degree Marksheet</label>
+                    <input type="file" name="degree_marksheet" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <small>PDF / JPG / PNG (Max 2MB)</small>
+                </div>
+
+                <!-- PROVISIONAL -->
+                <div class="input-group">
+                    <label>Provisional Certificate</label>
+                    <input type="file" name="provisional_certificate" accept=".pdf,.jpg,.jpeg,.png">
+                    <small>Optional</small>
+                </div>
+
+                <!-- PHOTO -->
+                <div class="input-group">
+                    <label>Passport Size Photo</label>
+                    <input type="file" name="photo" accept=".jpg,.jpeg,.png" required>
+                    <small>JPG / PNG Only</small>
+                </div>
+
+                <!-- AADHAAR -->
+                <div class="input-group">
+                    <label>Aadhaar Card</label>
+                    <input type="file" name="aadhaar_card" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <small>PDF / JPG / PNG</small>
+                </div>
+
+                <!-- PAN -->
+                <div class="input-group">
+                    <label>PAN Card</label>
+                    <input type="file" name="pan_card" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <small>PDF / JPG / PNG</small>
+                </div>
+
+            </div>
+
+            <!-- Previous & Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+        
+        </div>
+
+
+
+        <!-- STEP 3 : CERTIFICATION DETAILS -->
+        <div class="form-step">
+            <h2>3. Certification Details</h2>
+
+            <div class="form-grid">
+
+                <!-- CERTIFICATION TYPE -->
+                <div class="input-group">
+                    <label>Certification Type</label>
+                    <select id="certificationType" required>
+                        <option value="">-- Select Certification --</option>
+                        <option value="Certified">Certified</option>
+                        <option value="Non Certified">Non Certified</option>
+                        <option value="BMCT">BMCT</option>
+                    </select>
+                </div>
+
+
+                <!-- EXPERIENCE STATUS -->
+                <div class="input-group">
+                    <label>Experience Status</label>
+                    <select id="experienceStatus" required>
+                        <option value="">-- Select Status --</option>
+                        <option value="Fresher">Fresher</option>
+                        <option value="Experienced">Experienced</option>
+                    </select>
+                </div>
+
+                
+                <!-- RESUME SUBMISSION -->
+                <div class="input-group">
+                    <label>Resume Submission</label>
+                    <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+                    <small>PDF / DOC / DOCX (Max 5MB)</small>
+                </div>
+
+            </div>
+
+
+        <!-- CERTIFICATE UPLOAD -->
+        <div id="certificateUploadSection" style="display:none; margin-top:30px;">
 
             <div class="form-grid">
 
                 <div class="input-group">
-                    <label>10th Marksheet</label>
-                    <input type="file">
+                    <label>Upload Certificate</label>
+                    <input type="file" name="certificate_file" accept=".pdf,.jpg,.jpeg,.png">
+                    <small>PDF / JPG / PNG</small>
                 </div>
 
-                <div class="input-group">
-                    <label>12th Marksheet</label>
-                    <input type="file">
-                </div>
-
-                <div class="input-group">
-                    <label>Degree Completion Certificate</label>
-                    <input type="file">
-                </div>
-
-                <div class="input-group">
-                    <label>Degree Marksheet</label>
-                    <input type="file">
-                </div>
-
-                <div class="input-group">
-                    <label>Provisional Certificate</label>
-                    <input type="file">
-                </div>
-
-                <div class="input-group">
-                    <label>Passport Size Photo</label>
-                    <input type="file">
-                </div>
-
-                <div class="input-group">
-                    <label>Aadhaar Card</label>
-                    <input type="file">
-                </div>
-
-                <div class="input-group">
-                    <label>PAN Card</label>
-                    <input type="file">
-                </div>
-
-            </div> -->
-
-            <!-- BUTTON -->
-
-            <!-- <div class="btn-area">
-
-                <button type="button" class="prev-btn">
-                    Previous
-                </button>
-
-                <button type="submit" class="submit-btn">
-                    Final Submit
-                </button>
-
-            </div> -->
+            </div>
 
         </div>
+
+
+
+        <!-- STEP 4 : WORK EXPERIENCE -->
+        <div id="experienceSection" style="display:none; margin-top:30px;">
+            <h2>4. Work Experience (If Any)</h2>
+
+            <div class="form-grid">
+
+                <!-- TOTAL EXPERIENCE -->
+                <div class="input-group">
+                    <label>Total Experience</label>
+                    <input type="text"placeholder="2 Years 6 Months">
+                </div>
+
+                <!-- CURRENT COMPANY -->
+                <div class="input-group">
+                    <label>Current Company</label>
+                    <input type="text">
+                </div>
+
+                <!-- PREVIOUS COMPANY -->
+                <div class="input-group">
+                    <label>Previous Company</label>
+                    <input type="text">
+                </div>
+
+                <!-- ROLE -->
+                <div class="input-group">
+                    <label>Role / Designation</label>
+                    <input type="text">
+                </div>
+
+                <!-- SKILLS -->
+                <div class="input-group">
+                    <label>Key Skills</label>
+                    <input type="text" placeholder="ICD-10, CPT, Excel">
+                </div>
+
+                <!-- SALARY -->
+                <div class="input-group">
+                    <label>Last Drawn Salary</label>
+                    <input type="text" placeholder="₹25,000">
+                </div>
+
+                <!-- REASON -->
+                <div class="input-group full-width">
+                    <label>Reason for Leaving</label>
+                    <textarea rows="4"></textarea>
+                </div>
+
+            </div>
+        </div>
+
+
+            <!-- Previous & Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 5 : EDUCATIONAL DETAILS -->
+        <div class="form-step">
+            <h2>5. Educational Details</h2>
+
+            <div class="form-grid">
+
+                <!-- 10TH SCHOOL -->
+                <div class="input-group">
+                    <label>10th School Name</label>
+                    <input type="text" name="tenth_school_name" required>
+                </div>
+
+                <!-- 10TH PERCENTAGE -->
+                <div class="input-group">
+                    <label>10th Percentage / CGPA</label>
+                    <input type="text" name="tenth_percentage" placeholder="85%">
+                </div>
+
+                <!-- 10TH YEAR -->
+                <div class="input-group">
+                    <label>10th Year of Passing</label>
+                    <input type="number" name="tenth_year" placeholder="2018">
+                </div>
+
+                <!-- 12TH SCHOOL -->
+                <div class="input-group">
+                    <label>12th School Name</label>
+                    <input type="text" name="twelfth_school_name">
+                </div>
+
+                <!-- 12TH PERCENTAGE -->
+                <div class="input-group">
+                    <label>12th Percentage / CGPA</label>
+                    <input type="text" name="twelfth_percentage" placeholder="78%">
+                </div>
+
+                <!-- 12TH YEAR -->
+                <div class="input-group">
+                    <label>12th Year of Passing</label>
+                    <input type="number" name="twelfth_year" placeholder="2020">
+                </div>
+
+                <!-- COLLEGE NAME -->
+                <div class="input-group">
+                    <label>College Name</label>
+                    <input type="text" name="college_name" required>
+                </div>
+
+                <!-- UNIVERSITY NAME -->
+                <div class="input-group">
+                    <label>University Name</label>
+                    <input type="text" name="university_name">
+                </div>
+
+                <!-- DEGREE -->
+                <div class="input-group">
+                    <label>Degree</label>
+                    <select name="degree" required>
+                        <option value="">-- Select Degree --</option>
+                        <option value="B.Sc">B.Sc</option>
+                        <option value="B.Pharm">B.Pharm</option>
+                        <option value="D.Pharm">D.Pharm</option>
+                        <option value="B.Com">B.Com</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BBA">BBA</option>
+                        <option value="BA">BA</option>
+                        <option value="BE">BE</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="MBA">MBA</option>
+                        <option value="MCA">MCA</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <!-- SPECIALIZATION -->
+                <div class="input-group">
+                    <label>Specialization</label>
+                    <input type="text" name="specialization" placeholder="Computer Science">
+                </div>
+
+                <!-- COLLEGE CGPA -->
+                <div class="input-group">
+                    <label>Degree Percentage / CGPA</label>
+                    <input type="text" name="degree_percentage" placeholder="8.2 CGPA">
+                </div>
+
+                <!-- YEAR OF PASSING -->
+                <div class="input-group">
+                    <label>Degree Year of Passing</label>
+                    <input type="number" name="degree_year" placeholder="2024">
+                </div>
+
+            </div>
+
+
+            <!-- Previous & Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 6 : POSITION DETAILS -->
+        <div class="form-step">
+            <h2>6. Position Details & Skills</h2>
+
+            <div class="form-grid">
+
+                <!-- APPLYING FOR -->
+                <div class="input-group">
+                    <label>Applying For (Job Role)</label>
+                    <select name="job_role" required>
+                        <option value="">-- Select Job Role --</option>
+                        <option value="Medical Coder">Medical Coder</option>
+                        <option value="Senior Medical Coder">Senior Medical Coder</option>
+                        <option value="QA Analyst">QA Analyst</option>
+                        <option value="AR Caller">AR Caller</option>
+                        <option value="Trainer">Trainer</option>
+                        <option value="Team Leader">Team Leader</option>
+                    </select>
+                </div>
+
+                <!-- PREFERRED LOCATION -->
+                <div class="input-group">
+                    <label>Preferred Location</label>
+                    <select name="preferred_location" required>
+                        <option value="">-- Select Location --</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Chennai">Trichy</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                        <option value="Work From Home">Work From Home</option>
+                    </select>
+                </div>
+
+                <!-- EXPECTED SALARY -->
+                <div class="input-group">
+                    <label>Expected Salary</label>
+                    <input type="text" name="expected_salary" placeholder="₹25,000">
+                </div>
+
+                <!-- NOTICE PERIOD -->
+                <div class="input-group">
+                    <label>Notice Period</label>
+                    <select name="notice_period">
+                        <option value="">-- Select Notice Period --</option>
+                        <option value="Immediate Joiner">Immediate Joiner</option>
+                        <option value="15 Days">15 Days</option>
+                        <option value="30 Days">30 Days</option>
+                        <option value="60 Days">60 Days</option>
+                        <option value="90 Days">90 Days</option>
+                    </select>
+                </div>
+
+                <!-- RELOCATE -->
+                <div class="input-group">
+                    <label>Willing to Relocate</label>
+                    <select name="relocate">
+                        <option value="">-- Select Option --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <!-- SHIFT -->
+                <div class="input-group">
+                    <label>Preferred Shift</label>
+                    <select name="shift_preference">
+                        <option value="">-- Select Shift --</option>
+                        <option value="Day Shift">Day Shift</option>
+                        <option value="Night Shift">Night Shift</option>
+                        <option value="Rotational Shift">Rotational Shift</option>
+                    </select>
+                </div>
+
+                <!-- SKILLS -->
+                <div class="input-group full-width">
+                    <label>Skills & Technologies</label>
+                    <textarea rows="4" placeholder="ICD-10, CPT, Excel, E&M, Radiology"></textarea>
+                </div>
+
+                <!-- SOFTWARE -->
+                <div class="input-group full-width">
+                    <label>Software Knowledge</label>
+                    <textarea rows="4" placeholder="Excel, EMR, EHR, Power BI"></textarea>
+                </div>
+
+            </div>
+
+
+            <!-- Previous & Continue BUTTON -->    
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 7 : BANK DETAILS -->
+        <div class="form-step">
+            <h2>7. Bank Details</h2>
+
+            <div class="form-grid">
+
+                <!-- ACCOUNT HOLDER NAME -->
+                <div class="input-group">
+                    <label>Account Holder Name</label>
+                    <input type="text" name="account_holder_name" required>
+                </div>
+
+                <!-- BANK NAME -->
+                <div class="input-group">
+                    <label>Bank Name</label>
+                    <input type="text" name="bank_name" required>
+                </div>
+
+                <!-- ACCOUNT NUMBER -->
+                <div class="input-group">
+                    <label>Account Number</label>
+                    <input type="text" name="account_number" required>
+                </div>
+
+                <!-- CONFIRM ACCOUNT NUMBER -->
+                <div class="input-group">
+                    <label>Confirm Account Number</label>
+                    <input type="text" name="confirm_account_number" required>
+                </div>
+
+                <!-- IFSC CODE -->
+                <div class="input-group">
+                    <label>IFSC Code</label>
+                    <input type="text" name="ifsc_code" placeholder="SBIN0001234" required>
+                </div>
+
+                <!-- BRANCH NAME -->
+                <div class="input-group">
+                    <label>Branch Name</label>
+                    <input type="text" name="branch_name">
+                </div>
+
+                <!-- UPI ID -->
+                <div class="input-group">
+                    <label>UPI ID (Optional)</label>
+                    <input type="text" name="upi_id" placeholder="name@upi">
+                </div>
+
+                <!-- CANCELLED CHEQUE -->
+                <div class="input-group">
+                    <label>Cancelled Cheque Upload</label>
+                    <input type="file" name="cancelled_cheque" accept=".pdf,.jpg,.jpeg,.png">
+                    <small>PDF / JPG / PNG</small>
+                </div>
+
+            </div>
+
+
+            <!-- Previous & Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+
+        </div>
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
 
     </form>
 
@@ -249,63 +656,14 @@
 
 
 
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 3470 Healthcare & Medical Coding Training Institute.All Rights Reserved.</p>
+</footer>
+
+
 <!-- Javascript -->
 <script src="/js/script.js" defer></script>
-
-
-
-<script>
-
-const steps =
-document.querySelectorAll(".form-step");
-
-let currentStep = 0;
-
-
-/* NEXT BUTTON */
-
-document.querySelector(".next-btn")
-.addEventListener("click",()=>{
-
-    steps[currentStep]
-    .classList.remove("active");
-
-    currentStep++;
-
-    steps[currentStep]
-    .classList.add("active");
-
-});
-
-
-/* PREVIOUS BUTTON */
-
-document.querySelector(".prev-btn")
-.addEventListener("click",()=>{
-
-    steps[currentStep]
-    .classList.remove("active");
-
-    currentStep--;
-
-    steps[currentStep]
-    .classList.add("active");
-
-});
-
-
-/* FINAL SUBMIT */
-
-document.getElementById("multiStepForm")
-.addEventListener("submit",(e)=>{
-
-    e.preventDefault();
-
-    alert("Employee Form Submitted Successfully");
-
-});
-
-</script>
 
 
 </body>
