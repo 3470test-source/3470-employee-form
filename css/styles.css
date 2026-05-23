@@ -46,6 +46,79 @@
   font-weight: 600;
 }
 
+
+                                      /* ============================================
+                                                  Header - Responsive Size  
+                                         ============================================ */
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+@media screen and (max-width: 1024px) {
+
+  .employee-form-header {
+    padding: 20px;
+  }
+
+  .employee-form-header-logo {
+    left: 20px;
+  }
+
+  .employee-form-header-logo img {
+    width: 110px;
+    height: 95px;
+  }
+
+  .employee-form-header-text {
+    padding: 0 130px;
+  }
+
+  .employee-form-header-text h1 {
+    font-size: 22px;
+  }
+
+  .employee-form-header-text p {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media screen and (max-width: 767px) {
+
+  .employee-form-header {
+    flex-direction: column;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .employee-form-header-logo {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .employee-form-header-logo img {
+    width: 90px;
+    height: 80px;
+  }
+
+  .employee-form-header-text {
+    padding: 0;
+  }
+
+  .employee-form-header-text h1 {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .employee-form-header-text p {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------------*/
 
                                /* ================================= 
@@ -75,6 +148,10 @@
 .form-step.active h2 {
   font-size: 30px;
   color: #098532;
+}
+
+.experience-doc {
+  margin-top: 15px;
 }
 
 /*--- GRID ---*/
@@ -166,6 +243,86 @@
   background:green;
 }
 
+
+                                    /* ======================================== 
+                                            Employee Form - Responsive Size 
+                                       ======================================== */
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+@media screen and (max-width: 1024px) {
+
+  .employee-form-container {
+    width: 95%;
+    padding: 30px;
+  }
+
+  .form-grid {
+    gap: 20px;
+  }
+
+  .form-step.active h2 {
+    font-size: 26px;
+  }
+
+  .input-group label {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media screen and (max-width: 767px) {
+
+  .employee-form-container {
+    width: 95%;
+    padding: 20px 15px;
+    margin: 20px auto;
+    border-radius: 12px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .form-step.active h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .input-group label {
+    font-size: 15px;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-area {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .next-btn,
+  .prev-btn,
+  .submit-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------- */
 
                                       /* ================================= 
@@ -180,14 +337,171 @@
   margin-top:10px;
 }
 
+                                        /* ==================================
+                                                Footer - Responsive Size 
+                                           ================================== */
+
+
+/*----- Tablet -----*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer {
+    padding: 18px 25px;
+    font-size: 15px;
+  }
+}
+
+/*----- Mobile -----*/
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 15px 10px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
 /* -------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
+/*--- DECLARATION ---*/
+.declaration-box {
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  line-height:1.8;
+}
+
+/*--- CHECKBOX ---*/
+.checkbox-group {
+  margin-top:20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/*--- REVIEW BOX ---*/
+.review-box {
+  background:white;
+  padding:30px;
+  border-radius:10px;
+}
+
+/*--- REVIEW LIST ---*/
+.review-box ul {
+  margin-top:20px;
+  padding-left:20px;
+  line-height:2;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.review-box p {
+  margin-top:10px;
+}
 
 
+/* =========================
+      TABLET RESPONSIVE
+========================= */
+@media screen and (max-width: 1024px) {
+
+  .declaration-box,
+  .review-box {
+    padding: 25px;
+  }
+
+  .review-box li,
+  .review-box p,
+  .checkbox-group label {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+      MOBILE RESPONSIVE
+========================= */
+@media screen and (max-width: 767px) {
+
+  .declaration-box,
+  .review-box {
+    padding: 18px 15px;
+    border-radius: 8px;
+  }
+
+  .checkbox-group {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    margin-top: 3px;
+  }
+
+  .checkbox-group label {
+    font-size: 14px;
+    line-height: 1.6;
+    width: calc(100% - 30px);
+  }
+
+  .review-box ul {
+    padding-left: 18px;
+    line-height: 1.8;
+  }
+
+  .review-box li,
+  .review-box p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
+.policy-link {
+  margin-top: 20px;
+}
+
+.policy-link a {
+  display: inline-block;
+  padding: 12px 18px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.policy-link a:hover {
+  background: #0a5aaf;
+}
 
 
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+@media screen and (max-width: 1024px) {
 
+  .policy-link a {
+    font-size: 14px;
+    padding: 11px 16px;
+  }
+}
 
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media screen and (max-width: 767px) {
+
+  .policy-link {
+    width: 100%;
+  }
+
+  .policy-link a {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */

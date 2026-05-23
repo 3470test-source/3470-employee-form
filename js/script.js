@@ -131,6 +131,8 @@ const experienceStatus = document.getElementById("experienceStatus");
 
 const experienceSection = document.getElementById("experienceSection");
 
+const experienceDocuments = document.getElementById("experienceDocuments");
+
 
 /*--- EXPERIENCE CHANGE ---*/
 
@@ -138,12 +140,22 @@ experienceStatus.addEventListener("change",function(){
 
     if(this.value === "Experienced"){
 
+    /*-- SHOW EXPERIENCE --*/
         experienceSection
         .style.display = "block";
 
-    }else{
+    /*-- SHOW DOCUMENTS --*/
+        experienceDocuments
+        .style.display = "block";
 
+    } else{
+
+    /*-- HIDE EXPERIENCE --*/
         experienceSection
+        .style.display = "none";
+
+    /*-- HIDE DOCUMENTS --*/
+        experienceDocuments
         .style.display = "none";
 
     }
