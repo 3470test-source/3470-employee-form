@@ -52,7 +52,7 @@
                                          ============================================ */
 
 /* =========================
-   TABLET RESPONSIVE
+      TABLET RESPONSIVE
 ========================= */
 @media screen and (max-width: 1024px) {
 
@@ -84,7 +84,7 @@
 
 
 /* =========================
-   MOBILE RESPONSIVE
+       MOBILE RESPONSIVE
 ========================= */
 @media screen and (max-width: 767px) {
 
@@ -96,11 +96,11 @@
 
   .employee-form-header-logo {
     position: static;
-    margin-bottom: 10px;
+    margin-bottom: -5px;
   }
 
   .employee-form-header-logo img {
-    width: 90px;
+    width: 150px;
     height: 80px;
   }
 
@@ -249,7 +249,7 @@
                                        ======================================== */
 
 /* =========================
-   TABLET RESPONSIVE
+      TABLET RESPONSIVE
 ========================= */
 @media screen and (max-width: 1024px) {
 
@@ -272,7 +272,7 @@
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+      MOBILE RESPONSIVE
 ========================= */
 @media screen and (max-width: 767px) {
 
@@ -478,7 +478,7 @@
 
 
 /* =========================
-   TABLET RESPONSIVE
+      TABLET RESPONSIVE
 ========================= */
 @media screen and (max-width: 1024px) {
 
@@ -489,7 +489,7 @@
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+      MOBILE RESPONSIVE
 ========================= */
 @media screen and (max-width: 767px) {
 

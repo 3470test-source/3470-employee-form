@@ -68,19 +68,19 @@
                 <!-- Full Name -->
                 <div class="input-group">
                     <label>Full Name</label>
-                    <input type="text" required>
+                    <input type="text" name="full_name" required>
                 </div>
 
                 <!-- Date of Birth -->
                 <div class="input-group">
                     <label>Date of Birth</label>
-                    <input type="date">
+                    <input type="date" name="dob">
                 </div>
 
                 <!-- Gender -->
                 <div class="input-group">
                     <label>Gender</label>
-                    <select>
+                    <select name="gender">
                         <option value="">-- Select Gender --</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -91,37 +91,37 @@
                 <!-- Email Address -->
                 <div class="input-group">
                     <label>Email Address</label>
-                    <input type="email">
+                    <input type="email" name="email">
                 </div>
 
                 <!-- Mobile Number -->
                 <div class="input-group">
                     <label>Mobile Number</label>
-                    <input type="text">
+                    <input type="text" name="mobile">
                 </div>
 
                 <!-- Alternate Phone Number -->
                 <div class="input-group">
                     <label>Alternate Phone Number</label>
-                    <input type="text">
+                    <input type="text" name="alt_mobile">
                 </div>
 
                 <!-- Current Address -->
                 <div class="input-group full-width">
                     <label>Current Address</label>
-                    <textarea rows="4"></textarea>
+                    <textarea rows="4" name="current_address"></textarea>
                 </div>
 
                 <!-- Permanent Address -->
                 <div class="input-group full-width">
                     <label>Permanent Address</label>
-                    <textarea rows="4"></textarea>
+                    <textarea rows="4" name="permanent_address"></textarea>
                 </div>
 
                 <!-- State -->
                 <div class="input-group">
                     <label>State</label>
-                        <select id="state" required>
+                        <select id="state" name="state" required>
                             <option value="">-- Select State --</option>
                             <option value="Tamil Nadu"> Tamil Nadu</option>
                             <option value="Karnataka"> Karnataka</option>
@@ -134,7 +134,7 @@
                 <!-- City -->
                 <div class="input-group">
                     <label>City</label>
-                        <select id="city" required>
+                        <select id="city" name="city" required>
                             <option>-- Select City --</option>
                         </select>
                     </div>
@@ -142,13 +142,13 @@
                 <!-- Pincode -->
                 <div class="input-group">
                     <label>Pincode</label>
-                    <input type="text">
+                    <input type="text" name="pincode">
                 </div>
 
                 <!-- Nationality -->
                 <div class="input-group">
                     <label>Nationality</label>
-                    <input type="text">
+                    <input type="text" name="nationality">
                 </div>
 
             </div>
@@ -245,7 +245,7 @@
                 <!-- CERTIFICATION TYPE -->
                 <div class="input-group">
                     <label>Certification Type</label>
-                    <select id="certificationType" required>
+                    <select id="certificationType" name="certification_type" required>
                         <option value="">-- Select Certification --</option>
                         <option value="Certified">Certified</option>
                         <option value="Non Certified">Non Certified</option>
@@ -257,7 +257,7 @@
                 <!-- EXPERIENCE STATUS -->
                 <div class="input-group">
                     <label>Experience Status</label>
-                    <select id="experienceStatus" required>
+                    <select id="experienceStatus" name="experience_status" required>
                         <option value="">-- Select Status --</option>
                         <option value="Fresher">Fresher</option>
                         <option value="Experienced">Experienced</option>
@@ -291,7 +291,7 @@
         </div>
 
 
-
+ 
         <!-- STEP 4 : WORK EXPERIENCE -->
         <div id="experienceSection" style="display:none; margin-top:30px;">
             <h2>4. Work Experience (If Any)</h2>
@@ -301,43 +301,43 @@
                 <!-- TOTAL EXPERIENCE -->
                 <div class="input-group">
                     <label>Total Experience</label>
-                    <input type="text"placeholder="2 Years 6 Months">
+                    <input type="text" name="total_experience" placeholder="2 Years 6 Months">
                 </div>
 
                 <!-- CURRENT COMPANY -->
                 <div class="input-group">
                     <label>Current Company</label>
-                    <input type="text">
+                    <input type="text" name="current_company">
                 </div>
 
                 <!-- PREVIOUS COMPANY -->
                 <div class="input-group">
                     <label>Previous Company</label>
-                    <input type="text">
+                    <input type="text" name="previous_company">
                 </div>
 
                 <!-- ROLE -->
                 <div class="input-group">
                     <label>Role / Designation</label>
-                    <input type="text">
+                    <input type="text" name="designation">
                 </div>
 
                 <!-- SKILLS -->
                 <div class="input-group">
                     <label>Key Skills</label>
-                    <input type="text" placeholder="ICD-10, CPT, Excel">
+                    <input type="text" name="key_skills" placeholder="ICD-10, CPT, Excel">
                 </div>
 
                 <!-- SALARY -->
                 <div class="input-group">
                     <label>Last Drawn Salary</label>
-                    <input type="text" placeholder="₹25,000">
+                    <input type="text" name="salary" placeholder="₹25,000">
                 </div>
 
                 <!-- REASON -->
                 <div class="input-group full-width">
                     <label>Reason for Leaving</label>
-                    <textarea rows="4"></textarea>
+                    <textarea rows="4" name="reason"></textarea>
                 </div>
 
             </div>
@@ -567,13 +567,13 @@
                 <!-- SKILLS -->
                 <div class="input-group full-width">
                     <label>Skills & Technologies</label>
-                    <textarea rows="4" placeholder="ICD-10, CPT, Excel, E&M, Radiology"></textarea>
+                    <textarea rows="4" name="skills" placeholder="ICD-10, CPT, Excel, E&M, Radiology"></textarea>
                 </div>
 
                 <!-- SOFTWARE -->
                 <div class="input-group full-width">
                     <label>Software Knowledge</label>
-                    <textarea rows="4" placeholder="Excel, EMR, EHR, Power BI"></textarea>
+                    <textarea rows="4" name="software" placeholder="Excel, EMR, EHR, Power BI"></textarea>
                 </div>
 
             </div>
@@ -673,18 +673,18 @@
 
                 <!-- PDF LINK -->
                 <div class="policy-link">
-                    <a href="company-policies.pdf" target="_blank">📄 View Company Policies</a>
+                    <a href="/file/Compant-Policies.pdf" target="_blank">📄 View Company Policies</a>
                 </div>
 
                 <!-- DECLARATION CHECKBOX -->
                 <div class="checkbox-group">
-                    <input type="checkbox" id="declarationCheck" required>
+                    <input type="checkbox" id="declarationCheck" name="declaration" value="Accepted" required>
                     <label for="declarationCheck">I Agree to the Terms & Conditions</label>
                 </div>
 
                 <!-- POLICY CHECKBOX -->
                 <div class="checkbox-group">
-                    <input type="checkbox" id="agreePolicy" required>
+                    <input type="checkbox" id="agreePolicy" name="company_policy" value="Accepted" required>
                     <label for="agreePolicy">
                         I have read and understood the company policies and agree to follow all rules and regulations.
                     </label>
@@ -746,6 +746,285 @@
 
 <!-- Javascript -->
 <script src="/js/script.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+const form = document.getElementById("multiStepForm");
+
+/* FILE TO BASE64 */
+
+function fileToBase64(file){
+
+    return new Promise((resolve,reject)=>{
+
+        const reader =
+        new FileReader();
+
+        reader.readAsDataURL(file);
+
+        reader.onload = ()=>{
+
+            resolve(
+                reader.result
+                .split(",")[1]
+            );
+
+        };
+
+        reader.onerror = error =>
+        reject(error);
+
+    });
+
+}
+
+
+/* FORM SUBMIT */
+
+form.addEventListener(
+"submit",
+async function(e){
+
+    e.preventDefault();
+
+
+    /* GET FILES */
+
+    const resumeFile =
+    document.querySelector(
+    'input[name="resume"]'
+    ).files[0];
+
+
+    const tenthFile =
+    document.querySelector(
+    'input[name="tenth_marksheet"]'
+    ).files[0];
+
+
+    const twelfthFile =
+    document.querySelector(
+    'input[name="twelfth_marksheet"]'
+    ).files[0];
+
+
+    const aadhaarFile =
+    document.querySelector(
+    'input[name="aadhaar_card"]'
+    ).files[0];
+
+
+    const panFile =
+    document.querySelector(
+    'input[name="pan_card"]'
+    ).files[0];
+
+
+
+    /* FORM DATA */
+
+    const formData = {
+
+        full_name:
+        document.querySelector(
+        'input[name="full_name"]'
+        ).value,
+
+        dob:
+        document.querySelector(
+        'input[type="date"]'
+        ).value,
+
+        gender:
+        document.querySelector(
+        'select'
+        ).value,
+
+        email:
+        document.querySelector(
+        'input[type="email"]'
+        ).value,
+
+        mobile:
+        document.querySelector(
+        'input[name="mobile"]'
+        ).value,
+
+        alt_mobile:
+        document.querySelector(
+        'input[name="alt_mobile"]'
+        ).value,
+
+        current_address:
+        document.querySelector(
+        'textarea'
+        ).value,
+
+        state:
+        document.getElementById(
+        "state"
+        ).value,
+
+        city:
+        document.getElementById(
+        "city"
+        ).value,
+
+        pincode:
+        document.querySelector(
+        'input[name="pincode"]'
+        ).value,
+
+        nationality:
+        document.querySelector(
+        'input[name="nationality"]'
+        ).value,
+
+        certification_type:
+        document.getElementById(
+        "certificationType"
+        ).value,
+
+        experience_status:
+        document.getElementById(
+        "experienceStatus"
+        ).value,
+
+        job_role:
+        document.querySelector(
+        'select[name="job_role"]'
+        ).value,
+
+        bank_name:
+        document.querySelector(
+        'input[name="bank_name"]'
+        ).value,
+
+
+
+        /* FILES */
+
+        resume: resumeFile ? {
+
+            name:resumeFile.name,
+            type:resumeFile.type,
+
+            data:await fileToBase64(
+                resumeFile
+            )
+
+        } : null,
+
+
+        tenth_marksheet: tenthFile ? {
+
+            name:tenthFile.name,
+            type:tenthFile.type,
+
+            data:await fileToBase64(
+                tenthFile
+            )
+
+        } : null,
+
+
+        twelfth_marksheet: twelfthFile ? {
+
+            name:twelfthFile.name,
+            type:twelfthFile.type,
+
+            data:await fileToBase64(
+                twelfthFile
+            )
+
+        } : null,
+
+
+        aadhaar_card: aadhaarFile ? {
+
+            name:aadhaarFile.name,
+            type:aadhaarFile.type,
+
+            data:await fileToBase64(
+                aadhaarFile
+            )
+
+        } : null,
+
+
+        pan_card: panFile ? {
+
+            name:panFile.name,
+            type:panFile.type,
+
+            data:await fileToBase64(
+                panFile
+            )
+
+        } : null
+
+    };
+
+
+
+    /* SEND DATA */
+
+    const response =
+    await fetch(
+
+        "YOUR_WEB_APP_URL",
+
+        {
+
+            method:"POST",
+
+            body:JSON.stringify(
+                formData
+            )
+
+        }
+
+    );
+
+
+    const result =
+    await response.json();
+
+
+    if(result.status === "success"){
+
+        alert(
+        "Employee Form Submitted Successfully"
+        );
+
+        form.reset();
+
+    }
+
+    else{
+
+        alert(
+        "Submission Failed"
+        );
+
+        console.log(result);
+
+    }
+
+});
+
+</script>
 
 
 </body>
