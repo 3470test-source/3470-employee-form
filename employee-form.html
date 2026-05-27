@@ -757,22 +757,19 @@
 
 
 
-
+<!-- Google sheet convert the JS  -->
 <script>
 
 const form = document.getElementById("multiStepForm");
 
-/* FILE TO BASE64 */
+/*--- FILE TO BASE64 ---*/
 
 function fileToBase64(file){
 
     return new Promise((resolve,reject)=>{
 
-        const reader =
-        new FileReader();
-
+        const reader = new FileReader();
         reader.readAsDataURL(file);
-
         reader.onload = ()=>{
 
             resolve(
@@ -786,146 +783,108 @@ function fileToBase64(file){
         reject(error);
 
     });
-
 }
 
 
-/* FORM SUBMIT */
+/*--- FORM SUBMIT ---*/
 
-form.addEventListener(
-"submit",
-async function(e){
+form.addEventListener("submit",async function(e){
 
     e.preventDefault();
 
+    /*--- GET FILES ---*/
 
-    /* GET FILES */
+    const tenthFile = document.querySelector('input[name="tenth_marksheet"]').files[0];
+    const twelfthFile = document.querySelector('input[name="twelfth_marksheet"]').files[0];
+    const DegreeCompletionFile = document.querySelector('input[name="degree_certificate"]').files[0];
+    const degree_marksheetFile = document.querySelector('input[name="degree_marksheet"]').files[0];
+    const provisional_certificateFile = document.querySelector('input[name="provisional_certificate"]').files[0];
+    const photoFile = document.querySelector('input[name="photo"]').files[0];
+    const aadhaarFile = document.querySelector('input[name="aadhaar_card"]').files[0];
+    const panFile = document.querySelector('input[name="pan_card"]').files[0];
 
-    const resumeFile =
-    document.querySelector(
-    'input[name="resume"]'
-    ).files[0];
+    const resumeFile = document.querySelector('input[name="resume"]').files[0];
+    const certificate_fileFile = document.querySelector('input[name="certificate_file"]').files[0];
 
+    const offer_letterFile = document.querySelector('input[name="offer_letter"]').files[0];
+    const relieving_letterFile = document.querySelector('input[name="relieving_letter"]').files[0];
+    const payslipFile = document.querySelector('input[name="payslip"]').files[0];
 
-    const tenthFile =
-    document.querySelector(
-    'input[name="tenth_marksheet"]'
-    ).files[0];
+    const cancelled_chequeFile = document.querySelector('input[name="cancelled_cheque"]').files[0];
 
-
-    const twelfthFile =
-    document.querySelector(
-    'input[name="twelfth_marksheet"]'
-    ).files[0];
-
-
-    const aadhaarFile =
-    document.querySelector(
-    'input[name="aadhaar_card"]'
-    ).files[0];
-
-
-    const panFile =
-    document.querySelector(
-    'input[name="pan_card"]'
-    ).files[0];
-
-
-
-    /* FORM DATA */
+/*--- FORM DATA ---*/
 
     const formData = {
 
-        full_name:
-        document.querySelector(
-        'input[name="full_name"]'
-        ).value,
+        /*--- 1. Personal Details ---*/
+        full_name: document.querySelector('input[name="full_name"]').value,
+        dob: document.querySelector('input[type="date"]').value,
+        gender: document.querySelector('select[name="gender"]').value,
+        email: document.querySelector('input[type="email"]').value,
+        mobile: document.querySelector('input[name="mobile"]').value,
+        alt_mobile: document.querySelector('input[name="alt_mobile"]').value,
+        current_address: document.querySelector('textarea[name="current_address"]').value,
+        permanent_address: document.querySelector('textarea[name="permanent_address"]').value,
+        state: document.getElementById("state").value,
+        city: document.getElementById("city").value,
+        pincode: document.querySelector('input[name="pincode"]').value,
+        nationality: document.querySelector('input[name="nationality"]').value,
 
-        dob:
-        document.querySelector(
-        'input[type="date"]'
-        ).value,
+        certification_type: document.getElementById("certificationType").value,
+        experience_status: document.getElementById("experienceStatus").value,
 
-        gender:
-        document.querySelector(
-        'select'
-        ).value,
-
-        email:
-        document.querySelector(
-        'input[type="email"]'
-        ).value,
-
-        mobile:
-        document.querySelector(
-        'input[name="mobile"]'
-        ).value,
-
-        alt_mobile:
-        document.querySelector(
-        'input[name="alt_mobile"]'
-        ).value,
-
-        current_address:
-        document.querySelector(
-        'textarea'
-        ).value,
-
-        state:
-        document.getElementById(
-        "state"
-        ).value,
-
-        city:
-        document.getElementById(
-        "city"
-        ).value,
-
-        pincode:
-        document.querySelector(
-        'input[name="pincode"]'
-        ).value,
-
-        nationality:
-        document.querySelector(
-        'input[name="nationality"]'
-        ).value,
-
-        certification_type:
-        document.getElementById(
-        "certificationType"
-        ).value,
-
-        experience_status:
-        document.getElementById(
-        "experienceStatus"
-        ).value,
-
-        job_role:
-        document.querySelector(
-        'select[name="job_role"]'
-        ).value,
-
-        bank_name:
-        document.querySelector(
-        'input[name="bank_name"]'
-        ).value,
+        /*--- 4. Work Experience ---*/
+        total_experience: document.querySelector('input[name="total_experience"]').value,
+        current_company: document.querySelector('input[name="current_company"]').value,
+        previous_company: document.querySelector('input[name="previous_company"]').value,
+        designation: document.querySelector('input[name="designation"]').value,
+        key_skills: document.querySelector('input[name="key_skills"]').value,
+        salary: document.querySelector('input[name="salary"]').value, 
+        reason: document.querySelector('textarea[name="reason"]').value,
 
 
+        /*--- 5. Educational Details ---*/
+        tenth_school: document.querySelector('input[name="tenth_school_name"]').value,
+        tenth_percentage: document.querySelector('input[name="tenth_percentage"]').value,
+        tenth_year: document.querySelector('input[name="tenth_year"]').value,
 
-        /* FILES */
+        twelfth_school: document.querySelector('input[name="twelfth_school_name"]').value,
+        twelfth_percentage: document.querySelector('input[name="twelfth_percentage"]').value,
+        twelfth_year: document.querySelector('input[name="twelfth_year"]').value,
 
-        resume: resumeFile ? {
+        college_name: document.querySelector('input[name="college_name"]').value,
+        university_name: document.querySelector('input[name="university_name"]').value,
+        degree: document.querySelector('select[name="degree"]').value,
+        specialization: document.querySelector('input[name="specialization"]').value,
+        degree_percentage: document.querySelector('input[name="degree_percentage"]').value,
+        degree_year: document.querySelector('input[name="degree_year"]').value,
 
-            name:resumeFile.name,
-            type:resumeFile.type,
 
-            data:await fileToBase64(
-                resumeFile
-            )
+        /*--- 6. Position Details & Skills ---*/
+        job_role: document.querySelector('select[name="job_role"]').value,
+        preferred_location: document.querySelector('select[name="preferred_location"]').value,
+        expected_salary: document.querySelector('input[name="expected_salary"]').value,
+        notice_period: document.querySelector('select[name="notice_period"]').value,
+        relocate: document.querySelector('select[name="relocate"]').value,
+        shift_preference: document.querySelector('select[name="shift_preference"]').value,
+        skills: document.querySelector('textarea[name="skills"]').value,
+        software: document.querySelector('textarea[name="software"]').value,
 
-        } : null,
 
+        /*--- 7. Bank Details ---*/
+        account_holder_name: document.querySelector('input[name="account_holder_name"]').value,
+        bank_name: document.querySelector('input[name="bank_name"]').value,
+        account_number: document.querySelector('input[name="account_number"]').value,
+        confirm_account_number: document.querySelector('input[name="confirm_account_number"]').value,
+        ifsc_code: document.querySelector('input[name="ifsc_code"]').value,
+        branch_name: document.querySelector('input[name="branch_name"]').value,
+        upi_id: document.querySelector('input[name="upi_id"]').value,
+
+        /*--- 8. Declaration ---*/
+        declaration: document.querySelector('input[name="declaration"]').checked ? "Accepted" : "Not Accepted",
+        company_policy: document.querySelector('input[name="company_policy"]').checked ? "Accepted" : "Not Accepted",
+
+    /*--- FILES ---*/
 
         tenth_marksheet: tenthFile ? {
 
@@ -946,6 +905,54 @@ async function(e){
 
             data:await fileToBase64(
                 twelfthFile
+            )
+
+        } : null,
+
+
+        degree_certificate: DegreeCompletionFile ? {
+
+            name:DegreeCompletionFile.name,
+            type:DegreeCompletionFile.type,
+
+            data:await fileToBase64(
+                DegreeCompletionFile
+            )
+
+        } : null,
+
+
+        degree_marksheet: degree_marksheetFile ? {
+
+            name:degree_marksheetFile.name,
+            type:degree_marksheetFile.type,
+
+            data:await fileToBase64(
+                degree_marksheetFile
+            )
+
+        } : null,
+
+
+        provisional_certificate: provisional_certificateFile ? {
+
+            name:provisional_certificateFile.name,
+            type:provisional_certificateFile.type,
+
+            data:await fileToBase64(
+                provisional_certificateFile
+            )
+
+        } : null,
+
+
+        photo: photoFile ? {
+
+            name:photoFile.name,
+            type:photoFile.type,
+
+            data:await fileToBase64(
+                photoFile
             )
 
         } : null,
@@ -972,20 +979,88 @@ async function(e){
                 panFile
             )
 
+        } : null,
+
+
+        resume: resumeFile ? {
+
+            name:resumeFile.name,
+            type:resumeFile.type,
+
+            data:await fileToBase64(
+                resumeFile
+            )
+
+        } : null,
+
+
+        certificate_file: certificate_fileFile ? {
+
+            name:certificate_fileFile.name,
+            type:certificate_fileFile.type,
+
+            data:await fileToBase64(
+                certificate_fileFile
+            )
+
+        } : null,
+
+
+        offer_letter: offer_letterFile ? {
+
+            name:offer_letterFile.name,
+            type:offer_letterFile.type,
+
+            data:await fileToBase64(
+                offer_letterFile
+            )
+
+        } : null,
+
+
+        relieving_letter: relieving_letterFile ? {
+
+            name:relieving_letterFile.name,
+            type:relieving_letterFile.type,
+
+            data:await fileToBase64(
+                relieving_letterFile
+            )
+
+        } : null,
+
+
+        payslip: payslipFile ? {
+
+            name:payslipFile.name,
+            type:payslipFile.type,
+
+            data:await fileToBase64(
+                payslipFile
+            )
+
+        } : null,
+
+
+        cancelled_cheque: cancelled_chequeFile ? {
+
+            name:cancelled_chequeFile.name,
+            type:cancelled_chequeFile.type,
+
+            data:await fileToBase64(
+                cancelled_chequeFile
+            )
+
         } : null
+
 
     };
 
 
-
-    /* SEND DATA */
+    /*--- SEND DATA ---*/
 
     const response =
-    await fetch(
-
-        "YOUR_WEB_APP_URL",
-
-        {
+    await fetch("https://script.google.com/macros/s/AKfycbyXvuHxVVZJ8FPXSxDwfl4y3jxtKpLXzSvUWTwrgX4-8IWuLZj-dLeIRJFcMc52WpyUow/exec",{
 
             method:"POST",
 
@@ -998,15 +1073,11 @@ async function(e){
     );
 
 
-    const result =
-    await response.json();
-
+    const result = await response.json();
 
     if(result.status === "success"){
 
-        alert(
-        "Employee Form Submitted Successfully"
-        );
+        alert("Employee Form Submitted Successfully");
 
         form.reset();
 
@@ -1014,9 +1085,7 @@ async function(e){
 
     else{
 
-        alert(
-        "Submission Failed"
-        );
+        alert("Submission Failed");
 
         console.log(result);
 
