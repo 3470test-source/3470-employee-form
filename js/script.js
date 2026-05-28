@@ -55,13 +55,54 @@ nextBtns.forEach((btn)=>{
 
     btn.addEventListener("click",()=>{
 
-        formSteps[currentStep]
-        .classList.remove("active");
+    /*--- CURRENT STEP INPUTS ---*/
+
+        const inputs = formSteps[currentStep].querySelectorAll("input, select, textarea");
+
+        let isValid = true;
+
+        /*--- VALIDATION ---*/
+
+        inputs.forEach((input)=>{
+
+            if(input.hasAttribute("required")){
+
+                if(input.value.trim() === ""){
+
+                    input.style.border =
+                    "1px solid red";
+
+                    isValid = false;
+
+                }
+
+                else{
+
+                    input.style.border =
+                    "1px solid #ccc";
+
+                }
+
+            }
+
+        });
+
+        /*--- STOP NEXT STEP ---*/
+
+        if(!isValid){
+
+            alert("Please fill all required fields");
+
+            return;
+        }
+
+        /*--- NEXT STEP ---*/
+
+        formSteps[currentStep].classList.remove("active");
 
         currentStep++;
 
-        formSteps[currentStep]
-        .classList.add("active");
+        formSteps[currentStep].classList.add("active");
 
     });
 
@@ -73,13 +114,11 @@ prevBtns.forEach((btn)=>{
 
     btn.addEventListener("click",()=>{
 
-        formSteps[currentStep]
-        .classList.remove("active");
+        formSteps[currentStep].classList.remove("active");
 
         currentStep--;
 
-        formSteps[currentStep]
-        .classList.add("active");
+        formSteps[currentStep].classList.add("active");
 
     });
 
@@ -91,9 +130,9 @@ document.getElementById("multiStepForm").addEventListener("submit",(e)=>{
 
     e.preventDefault();
 
-    alert(
-        "Employee Form Submitted Successfully"
-    );
+    alert("✅ Thank You! Your Employee Joining Form Has Been Submitted Successfully");
+
+    form.reset();
 
 });
 

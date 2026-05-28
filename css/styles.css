@@ -243,6 +243,10 @@
   background:green;
 }
 
+.submit-btn:hover {
+  background:rgb(3, 80, 3);
+}
+
 
                                     /* ======================================== 
                                             Employee Form - Responsive Size 
