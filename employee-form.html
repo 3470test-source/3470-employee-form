@@ -162,9 +162,83 @@
 
 
 
-        <!-- STEP 2 : DOCUMENT UPLOAD -->
+        <!-- STEP 2 : FAMILY & EMPLOYMENT INFORMATION -->
         <div class="form-step">
-            <h2>2. Document Submission</h2>
+            <h2>2. Family & Employment Information</h2>
+
+            <div class="form-grid">
+
+                <!-- BLOOD GROUP -->
+                <div class="input-group">
+                    <label>Blood Group</label>
+                    <input type="text" name="blood_group"placeholder="Example: O+">
+                </div>
+
+                <!-- MARITAL STATUS -->
+                <div class="input-group">
+                    <label>Marital Status</label>
+                    <select name="marital_status" id="maritalStatus">
+                        <option value="">-- Select Status --</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                    </select>
+                </div>
+
+                <!-- FATHER NAME -->
+                <div class="input-group">
+                    <label>Father Name</label>
+                    <input type="text" name="father_name">
+                </div>
+
+                <!-- MOTHER NAME -->
+                <div class="input-group">
+                    <label>Mother Name</label>
+                    <input type="text" name="mother_name">
+                </div>
+
+                <!-- SPOUSE NAME -->
+                <div class="input-group" id="spouseSection">
+                    <label>Spouse Name</label>
+                    <input type="text" name="spouse_name">
+                </div>
+
+                <!-- PREVIOUSLY WORKED -->
+                <div class="input-group">
+                    <label>Previously Worked in 3470 Healthcare?</label>
+                    <select name="resigned_employee">
+                        <option value="">-- Select Option --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <!-- PF UAN NUMBER -->
+                <div class="input-group">
+                    <label>PF UAN Number</label>
+                    <input type="text" name="pf_uan_number">
+                </div>
+
+                <!-- ESI NUMBER -->
+                <div class="input-group">
+                    <label>ESI Number</label>
+                    <input type="text" name="esi_number">
+                </div>
+
+            </div>
+
+            <!-- Previous & Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 3 : DOCUMENT UPLOAD -->
+        <div class="form-step">
+            <h2>3. Document Submission</h2>
 
             <div class="form-grid">
 
@@ -236,9 +310,9 @@
 
 
 
-        <!-- STEP 3 : CERTIFICATION DETAILS -->
+        <!-- STEP 4 : CERTIFICATION DETAILS -->
         <div class="form-step">
-            <h2>3. Certification Details</h2>
+            <h2>4. Certification Details</h2>
 
             <div class="form-grid">
 
@@ -292,9 +366,9 @@
 
 
  
-        <!-- STEP 4 : WORK EXPERIENCE -->
+        <!-- STEP 5 : WORK EXPERIENCE -->
         <div id="experienceSection" style="display:none; margin-top:30px;">
-            <h2>4. Work Experience (If Any)</h2>
+            <h2>5. Work Experience (If Any)</h2>
 
             <div class="form-grid">
 
@@ -385,9 +459,9 @@
 
 
 
-        <!-- STEP 5 : EDUCATIONAL DETAILS -->
+        <!-- STEP 6 : EDUCATIONAL DETAILS -->
         <div class="form-step">
-            <h2>5. Educational Details</h2>
+            <h2>6. Educational Details</h2>
 
             <div class="form-grid">
 
@@ -440,7 +514,7 @@
                 </div>
 
                 <!-- DEGREE -->
-                <div class="input-group">
+                <!-- <div class="input-group">
                     <label>Degree</label>
                     <select name="degree" required>
                         <option value="">-- Select Degree --</option>
@@ -457,24 +531,29 @@
                         <option value="MCA">MCA</option>
                         <option value="Other">Other</option>
                     </select>
+                </div> -->
+
+                <div class="input-group">
+                    <label>Degree</label>
+                    <input type="text" name="degree" placeholder="Example: B.Sc"required>
                 </div>
 
                 <!-- SPECIALIZATION -->
                 <div class="input-group">
                     <label>Specialization</label>
-                    <input type="text" name="specialization" placeholder="Computer Science">
+                    <input type="text" name="specialization" placeholder="Example: Computer Science">
                 </div>
 
                 <!-- COLLEGE CGPA -->
                 <div class="input-group">
                     <label>Degree Percentage / CGPA</label>
-                    <input type="text" name="degree_percentage" placeholder="8.2 CGPA">
+                    <input type="text" name="degree_percentage" placeholder="Example: 8.2 CGPA or 78%">
                 </div>
 
                 <!-- YEAR OF PASSING -->
                 <div class="input-group">
                     <label>Degree Year of Passing</label>
-                    <input type="number" name="degree_year" placeholder="2024">
+                    <input type="number" name="degree_year"  placeholder="Example: 2024">
                 </div>
 
             </div>
@@ -490,9 +569,9 @@
 
 
 
-        <!-- STEP 6 : POSITION DETAILS -->
+        <!-- STEP 7 : POSITION DETAILS -->
         <div class="form-step">
-            <h2>6. Position Details & Skills</h2>
+            <h2>7. Position Details & Skills</h2>
 
             <div class="form-grid">
 
@@ -501,6 +580,13 @@
                     <label>Applying For (Job Role)</label>
                     <select name="job_role" required>
                         <option value="">-- Select Job Role --</option>
+                         <option value="Desktop Support">Desktop Support</option>
+                         <option value="House Keeping">House Keeping</option>
+                         <option value=""></option>
+                         <option value=""></option>
+
+
+
                         <option value="Medical Coder">Medical Coder</option>
                         <option value="Senior Medical Coder">Senior Medical Coder</option>
                         <option value="QA Analyst">QA Analyst</option>
@@ -589,9 +675,9 @@
 
 
 
-        <!-- STEP 7 : BANK DETAILS -->
+        <!-- STEP 8 : BANK DETAILS -->
         <div class="form-step">
-            <h2>7. Bank Details</h2>
+            <h2>8. Bank Details</h2>
 
             <div class="form-grid">
 
@@ -657,9 +743,9 @@
 
 
 
-        <!-- STEP 8 : DECLARATION -->
+        <!-- STEP 9 : DECLARATION -->
         <div class="form-step">
-            <h2>8. Declaration</h2>
+            <h2>9. Declaration</h2>
 
             <div class="declaration-box">
                 <p>📌 I hereby declare that all the information provided by me is true and correct to the best of my knowledge.</p>
@@ -703,14 +789,15 @@
 
 
 
-        <!-- STEP 9 : REVIEW & SUBMIT -->
+        <!-- STEP 10 : REVIEW & SUBMIT -->
         <div class="form-step">
-            <h2>9. Review & Submit</h2>
+            <h2>10. Review & Submit</h2>
 
             <div class="review-box">
                 <h3>Review Your Information</h3>
                     <ul>
                         <li>✔ Personal Information</li>
+                        <li>✔ Family & Employment Information</li>
                         <li>✔ Document Submission</li>
                         <li>✔ Certification Details</li>
                         <li>✔ Work Experience</li>
