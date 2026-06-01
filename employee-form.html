@@ -334,6 +334,12 @@
                     <small>PDF / DOC / DOCX (Max 5MB)</small>
                 </div>
 
+                 <div class="input-group">
+                    <label>Medical Fitness Certificate</label>
+                    <input type="file" name="medical_fitness_certificate" accept=".pdf,.doc,.docx">
+                    <small>PDF / DOC / DOCX (Max 5MB)</small>
+                </div>
+
             </div>
 
 
@@ -901,6 +907,7 @@ form.addEventListener("submit",async function(e){
     const panFile = document.querySelector('input[name="pan_card"]').files[0];
 
     const resumeFile = document.querySelector('input[name="resume"]').files[0];
+    const medical_fitness_certificateFile = document.querySelector('input[name="medical_fitness_certificate"]').files[0];
     const certificate_fileFile = document.querySelector('input[name="certificate_file"]').files[0];
 
     const offer_letterFile = document.querySelector('input[name="offer_letter"]').files[0];
@@ -1107,6 +1114,18 @@ form.addEventListener("submit",async function(e){
         } : null,
 
 
+        medical_fitness_certificate: medical_fitness_certificateFile ? {
+
+            name:medical_fitness_certificateFile.name,
+            type:medical_fitness_certificateFile.type,
+
+            data:await fileToBase64(
+                medical_fitness_certificateFile
+            )
+
+        } : null,
+
+
         certificate_file: certificate_fileFile ? {
 
             name:certificate_fileFile.name,
@@ -1173,7 +1192,7 @@ form.addEventListener("submit",async function(e){
     /*--- SEND DATA ---*/
 
     const response =
-    await fetch("https://script.google.com/macros/s/AKfycbzKpuioPbHVe0h4xWNIgwOy1n8jhVFQdjSDKPL6fpWvAtCPH-0hpk-wB3bbWBTZijco5A/exec",{
+    await fetch("https://script.google.com/macros/s/AKfycbxFCDUZaW-NW19IKI_FAyx1qlH7VKusm1e2KaMkpMCaBBZaVAP0jW7YI0jFmuXs1o-Lhg/exec",{
 
             method:"POST",
 

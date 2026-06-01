@@ -63,38 +63,38 @@ nextBtns.forEach((btn)=>{
 
         /*--- VALIDATION ---*/
 
-        // inputs.forEach((input)=>{
+        inputs.forEach((input)=>{
 
-        //     if(input.hasAttribute("required")){
+            if(input.hasAttribute("required")){
 
-        //         if(input.value.trim() === ""){
+                if(input.value.trim() === ""){
 
-        //             input.style.border =
-        //             "1px solid red";
+                    input.style.border =
+                    "1px solid red";
 
-        //             isValid = false;
+                    isValid = false;
 
-        //         }
+                }
 
-        //         else{
+                else{
 
-        //             input.style.border =
-        //             "1px solid #ccc";
+                    input.style.border =
+                    "1px solid #ccc";
 
-        //         }
+                }
 
-        //     }
+            }
 
-        // });
+        });
 
         /*--- STOP NEXT STEP ---*/
 
-        // if(!isValid){
+        if(!isValid){
 
-        //     alert("Please fill all required fields");
+            alert("Please fill all required fields");
 
-        //     return;
-        // }
+            return;
+        }
 
         /*--- NEXT STEP ---*/
 
@@ -145,60 +145,76 @@ const certificationType = document.getElementById("certificationType");
 
 const certificateUploadSection = document.getElementById("certificateUploadSection");
 
+const certificateFile = document.querySelector('input[name="certificate_file"]');
+
 
 /*--- CERTIFICATION CHANGE ---*/
 certificationType.addEventListener("change",function(){
 
     if(this.value === "Certified"){
 
-        certificateUploadSection
-        .style.display = "block";
+        certificateUploadSection.style.display = "block";
+        certificateFile.required = true;
 
-    }else{
+    }else {
 
-        certificateUploadSection
-        .style.display = "none";
+        certificateUploadSection.style.display = "none";
+        certificateFile.required = false;
+        certificateFile.value = "";
 
     }
 
 });
 
 
+
 /*--- EXPERIENCE SHOW/HIDE ---*/
 
 const experienceStatus = document.getElementById("experienceStatus");
-
 const experienceSection = document.getElementById("experienceSection");
-
 const experienceDocuments = document.getElementById("experienceDocuments");
 
+experienceStatus.addEventListener("change", function () {
 
-/*--- EXPERIENCE CHANGE ---*/
+    const requiredFields = experienceSection.querySelectorAll(
+        'input[name="total_experience"],' +
+        'input[name="designation"],' +
+        'input[name="offer_letter"],' +
+        'input[name="relieving_letter"]'
+    );
 
-experienceStatus.addEventListener("change",function(){
+    if (this.value === "Experienced") {
 
-    if(this.value === "Experienced"){
+        experienceSection.style.display = "block";
 
-    /*-- SHOW EXPERIENCE --*/
-        experienceSection
-        .style.display = "block";
+        requiredFields.forEach(field => {
+            field.required = true;
+        });
 
-    /*-- SHOW DOCUMENTS --*/
-        experienceDocuments
-        .style.display = "block";
+    } else {
 
-    } else{
+        experienceSection.style.display = "none";
 
-    /*-- HIDE EXPERIENCE --*/
-        experienceSection
-        .style.display = "none";
-
-    /*-- HIDE DOCUMENTS --*/
-        experienceDocuments
-        .style.display = "none";
+        requiredFields.forEach(field => {
+            field.required = false;
+        });
 
     }
 
 });
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
