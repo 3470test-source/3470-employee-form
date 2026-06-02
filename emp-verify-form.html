@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3470 Healthcare & Employee Task Management-System - Employee-verification-form</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/image/Logo3470-health3-removebg-preview.png" type="image/x-icon">
+
+    <!-- Css styles -->
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #c5daee;
+      display:flex;
+      flex-direction:column;
+    }
+
+    html,
+    body {
+      height:100%;
+    }
+
+    </style>
+
+</head>
+<body>
+    
+<header class="emp-company-header">
+
+    <!-- LOGO -->
+    <div class="verifyEmp-header-logo">
+        <img src="/image/Logo3470-health3-removebg-preview.png" alt="Company Logo">
+    </div>
+
+    <!-- HEADER TEXT -->
+    <div class="verifyEmp-header-text">
+        <h1>3470 Healthcare & Medical Coding Training Institute</h1>
+        <p>Employee Management Portal</p>
+    </div>
+
+</header>
+
+
+<!-- Employee Management Portal -->
+<div class="employee-form-container">
+
+    <form id="multiStepForm">
+
+        <!-- STEP 1 : Employee Verification Details -->
+        <div class="form-step active">
+            <h2>1. Employee Verification Details</h2>
+
+            <div class="form-grid">
+
+                <!-- Employee ID -->
+                <div class="input-group">
+                    <label>Employee ID Number</label>
+                    <input type="text" name="employee_id" required>
+                </div>
+
+                <!-- Employee Name -->
+                <div class="input-group">
+                    <label>Employee Name</label>
+                    <input type="text" name="employee_name" required>
+                </div>
+
+                <!-- Date of Joining -->
+                <div class="input-group">
+                    <label>Date of Joining</label>
+                    <input type="date" name="date_of_joining" required>
+                </div>
+
+                <!-- Department -->
+                <div class="input-group">
+                    <label>Department</label>
+                    <input type="text" name="department">
+                </div>
+
+                <!-- Designation -->
+                <div class="input-group">
+                    <label>Designation</label>
+                    <input type="text" name="designation">
+                </div>
+
+                <!-- Team -->
+                <div class="input-group">
+                    <label>Team</label>
+                    <input type="text" name="team">
+                </div>
+
+                <!-- Salary -->
+                <div class="input-group">
+                    <label>Salary</label>
+                    <input type="text" name="salary" placeholder="Example: ₹25,000">
+                </div>
+
+                <!-- Bond Period -->
+                <div class="input-group">
+                    <label>Bond Period</label>
+                    <input type="text" name="bond_period" placeholder="Example: 2 Years">
+                </div>
+
+            </div>
+
+            <!-- Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 2 : DOCUMENT & DISTRIBUTION STATUS -->
+        <div class="form-step">
+            <h2>2. Document & Distribution Status</h2>
+
+            <div class="form-grid">
+
+                <!-- SUBMITTED DOCUMENTS -->
+                <div class="input-group">
+                    <label>Submitted Documents</label>
+                    <select name="submitted_documents" required>
+                        <option value="">-- Select Status --</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </div>
+
+                <!-- OFFER LETTER -->
+                <div class="input-group">
+                    <label>Offer Letter Distribution</label>
+                    <select name="offer_letter_distribution">
+                        <option value="">-- Select Status --</option>
+                        <option value="Distributed">Distributed</option>
+                        <option value="Not Distributed">Not Distributed</option>
+                    </select>
+                </div>
+
+                <!-- PAYSLIP -->
+                <div class="input-group">
+                    <label>Payslip Distribution</label>
+                    <select name="payslip_distribution">
+                        <option value="">-- Select Status --</option>
+                        <option value="Distributed">Distributed</option>
+                        <option value="Not Distributed">Not Distributed</option>
+                    </select>
+                </div>
+
+                <!-- RESIGNATION LETTER -->
+                <!-- <div class="input-group">
+                    <label>Resignation Letter Distribution</label>
+                    <select name="resignation_letter_distribution">
+                        <option value="">-- Select Status --</option>
+                        <option value="Distributed">Distributed</option>
+                        <option value="Not Distributed">Not Distributed</option>
+                    </select>
+                </div> -->
+
+            </div>
+
+            <!-- Previous & Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+
+        </div>
+
+
+
+        <!-- STEP 3 : EXIT & RELIEVING DETAILS -->
+        <div class="form-step">
+            <h2>3. Exit & Relieving Details</h2>
+
+            <div class="form-grid">
+
+            <!-- RELIEVING STATUS -->
+            <div class="input-group">
+                <label>Relieving Status</label>
+                <select id="relievingStatus" name="relieving_status">
+                    <option value="">-- Select Status --</option>
+                    <option value="Active">Active</option>
+                    <option value="Resigned">Resigned</option>
+                    <option value="Abscond">Abscond</option>
+                    <option value="Terminated">Terminated</option>
+                </select>
+            </div>
+
+        </div>
+        
+        <!-- EXIT DETAILS -->
+        <div id="exitSection" style="display:none; margin-top:30px;">
+
+            <div class="form-grid">
+
+            <!-- LAST WORKING DAY -->
+            <div class="input-group">
+                <label>Last Working Day</label>
+                <input type="date" name="last_working_day">
+            </div>
+
+            <!-- DOCUMENTS RETURN -->
+            <div class="input-group">
+                <label>Documents Return</label>
+                <select name="documents_return">
+                    <option value="">-- Select Status --</option>
+                    <option value="Returned">Returned</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+
+            <!-- PAYSLIP DISTRIBUTION -->
+            <!-- <div class="input-group">
+                <label>Payslip Distribution</label>
+                <select name="payslip_distribution">
+                    <option value="">-- Select Status --</option>
+                    <option value="Distributed">Distributed</option>
+                    <option value="Not Distributed">Not Distributed</option>
+                </select>
+            </div> -->
+
+            <!-- RESIGNATION LETTER -->
+            <div class="input-group">
+                <label>Resignation Letter Distribution</label>
+                <select name="resignation_letter_distribution">
+                    <option value="">-- Select Status --</option>
+                    <option value="Distributed">Distributed</option>
+                    <option value="Not Distributed">Not Distributed</option>
+                </select>
+            </div>
+
+        </div>
+
+    </div>
+
+            <!-- Previous & Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Continue</button>
+            </div>
+
+        </div>
+
+
+        
+        <!-- STEP 4 : FINAL VERIFICATION & SUBMIT -->
+        <div class="form-step">
+            <h2>4. Final Verification & Submit</h2>
+
+            <div class="review-box">
+                <h3>Verification Checklist</h3>
+
+                    <ul>
+                        <li>✔ Employee Information Verified</li>
+                        <li>✔ Joining Details Verified</li>
+                        <li>✔ Documents Verified</li>
+                        <li>✔ Offer Letter Status Updated</li>
+                        <li>✔ Exit Status Updated (If Applicable)</li>
+                    </ul>
+
+            <div class="form-grid">    
+
+                <!-- VERIFICATION STATUS -->
+                <div class="input-group">
+                    <label>Verification Status</label>
+                    <select name="verification_status" required>
+                        <option value="">-- Select Status --</option>
+                        <option value="Verified">Verified</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <!-- VERIFIED BY -->
+                <div class="input-group">
+                    <label>Verified By</label>
+                    <input type="text" name="verified_by">
+                </div>
+
+                <!-- VERIFICATION DATE -->
+                <div class="input-group">
+                    <label>Verification Date</label>
+                    <input type="date" name="verification_date">
+                </div>
+
+                <!-- REMARKS -->
+                <div class="input-group full-width">
+                    <label>Remarks</label>
+                    <textarea rows="4" name="remarks" placeholder="Enter comments if any"></textarea>
+                </div>
+
+            </div>
+
+        </div>
+
+            <!-- Previous & Continue BUTTON -->
+            <div class="btn-area">
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="submit" class="submit-btn">Final Submit</button>
+            </div>
+
+        </div>
+        
+    </form>
+
+</div>
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 3470 Healthcare & Medical Coding Training Institute.All Rights Reserved.</p>
+</footer>
+
+
+
+<!----- MULTI STEP FORM PREVIOUS ,CONTINUE & FINAL SUBMIT -----> 
+<script>
+
+const steps = document.querySelectorAll(".form-step");
+const nextBtns = document.querySelectorAll(".next-btn");
+const prevBtns = document.querySelectorAll(".prev-btn");
+
+let currentStep = 0;
+
+/*--- SHOW STEP ---*/
+function showStep(index) {
+
+    steps.forEach((step) => {
+        step.classList.remove("active");
+    });
+
+    steps[index].classList.add("active");
+}
+
+/*--- NEXT BUTTON ---*/
+nextBtns.forEach((btn) => {
+
+    btn.addEventListener("click", () => {
+
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+
+    });
+
+});
+
+/*--- PREVIOUS BUTTON ---*/
+prevBtns.forEach((btn) => {
+
+    btn.addEventListener("click", () => {
+
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+        }
+
+    });
+
+});
+
+</script>
+
+
+<!-- Exit & Relieving Details - JS -->
+<script>
+
+    const relievingStatus = document.getElementById("relievingStatus");
+    const exitSection = document.getElementById("exitSection");
+
+    relievingStatus.addEventListener("change", function () {
+
+    if (
+        this.value === "Resigned" ||
+        this.value === "Abscond" ||
+        this.value === "Terminated"
+    ) {
+
+        exitSection.style.display = "block";
+
+    } else {
+
+        exitSection.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

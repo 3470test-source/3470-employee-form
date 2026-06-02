@@ -1,4 +1,4 @@
-        /* <!----- State & City  -----> */
+    /* <!----- State & City  -----> */
 
 const state = document.getElementById("state");
 const city = document.getElementById("city");
