@@ -63,38 +63,38 @@ nextBtns.forEach((btn)=>{
 
         /*--- VALIDATION ---*/
 
-        inputs.forEach((input)=>{
+        // inputs.forEach((input)=>{
 
-            if(input.hasAttribute("required")){
+        //     if(input.hasAttribute("required")){
 
-                if(input.value.trim() === ""){
+        //         if(input.value.trim() === ""){
 
-                    input.style.border =
-                    "1px solid red";
+        //             input.style.border =
+        //             "1px solid red";
 
-                    isValid = false;
+        //             isValid = false;
 
-                }
+        //         }
 
-                else{
+        //         else{
 
-                    input.style.border =
-                    "1px solid #ccc";
+        //             input.style.border =
+        //             "1px solid #ccc";
 
-                }
+        //         }
 
-            }
+        //     }
 
-        });
+        // });
 
         /*--- STOP NEXT STEP ---*/
 
-        if(!isValid){
+        // if(!isValid){
 
-            alert("Please fill all required fields");
+        //     alert("Please fill all required fields");
 
-            return;
-        }
+        //     return;
+        // }
 
         /*--- NEXT STEP ---*/
 

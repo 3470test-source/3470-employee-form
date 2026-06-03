@@ -801,6 +801,21 @@
                     </label>
                 </div>
 
+                <!-- Employee Digital Signature -->
+                <div class="signature-section">
+
+                    <div class="signature-box">
+                        <label>Employee Digital Signature</label>
+                        <input type="text" name="digital_signature" placeholder="Enter Full Name" required>
+                    </div>
+
+                    <div class="signature-box">
+                        <label>Date</label>
+                        <input type="date" name="declaration_date" required>
+                    </div>
+
+                </div>
+
             </div>
 
 
@@ -1003,6 +1018,9 @@ form.addEventListener("submit",async function(e){
         /*--- 8. Declaration ---*/
         declaration: document.querySelector('input[name="declaration"]').checked ? "Accepted" : "Not Accepted",
         company_policy: document.querySelector('input[name="company_policy"]').checked ? "Accepted" : "Not Accepted",
+        digital_signature: document.querySelector('input[name="digital_signature"]').value,
+        declaration_date: document.querySelector('input[name="declaration_date"]').value,
+
 
     /*--- FILES ---*/
 
@@ -1192,7 +1210,7 @@ form.addEventListener("submit",async function(e){
     /*--- SEND DATA ---*/
 
     const response =
-    await fetch("https://script.google.com/macros/s/AKfycbxFCDUZaW-NW19IKI_FAyx1qlH7VKusm1e2KaMkpMCaBBZaVAP0jW7YI0jFmuXs1o-Lhg/exec",{
+    await fetch("https://script.google.com/macros/s/AKfycbw8xcDg3pqUiLnvY2rDdRw8682obMKTo2iuJaFZI2RwAWiEWa0OW115Ur-krDqVOWJsIg/exec",{
 
             method:"POST",
 

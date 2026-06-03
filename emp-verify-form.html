@@ -160,6 +160,12 @@
                     </select>
                 </div>
 
+                <!-- EMPLOYEE MOBILE NUMBER -->
+                <div class="input-group">
+                    <label>Employee Mobile Number</label>
+                    <input type="text" name="employee_mobile_number" placeholder="Enter Mobile Number">
+                </div>
+
                 <!-- RESIGNATION LETTER -->
                 <!-- <div class="input-group">
                     <label>Resignation Letter Distribution</label>
@@ -403,6 +409,55 @@ prevBtns.forEach((btn) => {
 });
 
 </script>
+
+
+
+<!-- Google sheet apps script - convert JS -->
+<script>
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbwlSWTitEDzYgoV4EEqzXMt0q-fWPO5VRqPwN29E2l8yCBVyknrNK5zo0xoNiMR-w0O/exec";
+
+document.getElementById("multiStepForm").addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const submitBtn = document.querySelector(".submit-btn");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    try {
+
+        const formData = new FormData(this);
+
+        const response = await fetch(scriptURL,{
+            method:"POST",
+            body:formData
+        });
+
+        const result = await response.text();
+
+        alert("✅ Employee Verification Submitted Successfully !");
+
+        this.reset();
+
+        location.reload();
+
+    } catch(error){
+
+        console.error(error);
+        alert("Submission Failed");
+
+    } finally{
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Final Submit";
+
+    }
+
+});
+
+</script>
+
 
 </body>
 </html>

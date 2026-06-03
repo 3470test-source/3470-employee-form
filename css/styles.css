@@ -508,6 +508,69 @@
   }
 }
 
+/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+                          /* =====================================
+                                Employee Digital Signature
+                          ===================================== */
+
+.signature-section {
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  margin-top:20px;
+}
+
+.signature-box {
+  flex:1;
+}
+
+.signature-box label {
+  display:block;
+  font-weight:600;
+  margin-bottom:8px;
+  color: #0a5aaf;
+}
+
+.signature-box input {
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+.signature-box input:focus {
+  border: 1px solid #0aa06e;   
+  outline: none;               
+  box-shadow: 0 0 0 3px rgba(10, 160, 110, 0.15);
+}
+
+
+/*--- Tablet ---*/
+@media screen and (max-width:1024px){
+
+    .signature-section{
+        gap:20px;
+    }
+
+}
+
+
+/*--- Mobile ---*/
+@media screen and (max-width:768px){
+
+    .signature-section{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .signature-box{
+        width:100%;
+    }
+
+}
+
 /* --------------------------------------------------------------------------------------------------------------------------------------------- */
 
                                        /* =================================================
