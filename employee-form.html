@@ -348,22 +348,60 @@
 
             <div class="form-grid">
 
+                <!-- UPLOAD CERTIFICATE -->
                 <div class="input-group">
                     <label>Upload Certificate</label>
                     <input type="file" name="certificate_file" accept=".pdf,.jpg,.jpeg,.png" required>
                     <small>PDF / JPG / PNG</small>
                 </div>
 
+                <!-- AAPC MEMBER ID -->
                 <div class="input-group">
                     <label>AAPC Member ID</label>
                     <input type="text" name="aapc_member_id">
                 </div>
 
+                <!-- AAPC USERNAME -->
                 <div class="input-group">
                     <label>AAPC Username</label>
                     <input type="text" name="aapc_username">
                 </div>
 
+                <!-- AAPC PASSWORD -->
+                <div class="input-group">
+                    <label>AAPC Password</label>
+                    <input type="text" name="aapc_password">
+                </div>
+
+                <!-- AAPC FIRST NAME -->
+                <div class="input-group">
+                    <label>AAPC First Name</label>
+                    <input type="text" name="aapc_first_name">
+                </div>
+
+                <!-- AAPC LAST NAME -->
+                <div class="input-group">
+                    <label>AAPC Last Name</label>
+                    <input type="text" name="aapc_last_name">
+                </div>
+
+                <!-- RENEWAL BY 3470 HEALTHCARE -->
+                <div class="input-group">
+                    <label>Renewal by 3470 Healthcare?</label>
+                    <select name="renewal_by_3470">
+                        <option value="">-- Select Option --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <!-- DATE OF CERTIFICATION -->
+                <div class="input-group">
+                    <label>Date of Certification</label>
+                    <input type="date" name="date_certification">
+                </div>
+
+                <!-- CERTIFICATION EXPIRY DATE -->
                 <div class="input-group">
                     <label>Certification Expiry Date (Optional)</label>
                     <input type="date" name="certification_expiry_date">
@@ -964,6 +1002,11 @@ form.addEventListener("submit",async function(e){
         certification_type: document.getElementById("certificationType").value,
         aapc_member_id: document.querySelector('input[name="aapc_member_id"]').value,
         aapc_username: document.querySelector('input[name="aapc_username"]').value,
+        aapc_password: document.querySelector('input[name="aapc_password"]').value,
+        aapc_first_name: document.querySelector('input[name="aapc_first_name"]').value,   
+        aapc_last_name: document.querySelector('input[name="aapc_last_name"]').value,   
+        renewal_by_3470: document.querySelector('select[name="renewal_by_3470"]').value,   
+        date_certification: document.querySelector('input[name="date_certification"]').value,
         certification_expiry_date: document.querySelector('input[name="certification_expiry_date"]').value,
         
 
@@ -1210,7 +1253,7 @@ form.addEventListener("submit",async function(e){
     /*--- SEND DATA ---*/
 
     const response =
-    await fetch("https://script.google.com/macros/s/AKfycbw8xcDg3pqUiLnvY2rDdRw8682obMKTo2iuJaFZI2RwAWiEWa0OW115Ur-krDqVOWJsIg/exec",{
+    await fetch("https://script.google.com/macros/s/AKfycbySd9vdHUVo4JONoE0A0wIhsM733UptRU7bazNpauzZNLfkY4_WIfNrctq2udsNB9ndtg/exec",{
 
             method:"POST",
 
